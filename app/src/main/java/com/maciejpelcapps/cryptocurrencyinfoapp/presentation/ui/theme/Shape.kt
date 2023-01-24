@@ -1,4 +1,4 @@
-package com.maciejpelcapps.cryptocurrencyinfoapp.ui.theme
+package com.maciejpelcapps.cryptocurrencyinfoapp.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

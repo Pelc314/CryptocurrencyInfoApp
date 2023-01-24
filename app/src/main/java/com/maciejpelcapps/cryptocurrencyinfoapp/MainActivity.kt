@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.maciejpelcapps.cryptocurrencyinfoapp.ui.theme.CryptocurrencyInfoAppTheme
+import com.maciejpelcapps.cryptocurrencyinfoapp.presentation.ui.theme.CryptocurrencyInfoAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.maciejpelcapps.cryptocurrencyinfoapp.ui.theme // ktlint-disable filename
+package com.maciejpelcapps.cryptocurrencyinfoapp.presentation.ui.theme // ktlint-disable filename
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors

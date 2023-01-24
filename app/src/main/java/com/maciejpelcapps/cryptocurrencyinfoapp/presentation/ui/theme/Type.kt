@@ -1,4 +1,4 @@
-package com.maciejpelcapps.cryptocurrencyinfoapp.ui.theme
+package com.maciejpelcapps.cryptocurrencyinfoapp.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
