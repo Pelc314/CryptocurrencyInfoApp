@@ -13,8 +13,4 @@ interface CoinPaprikaApi {
     suspend fun getCoinById(
         @Path("coinId") coinId: String
     ): CoinDetailDto
-
-    companion object {
-        const val BASE_URL = "https://api.coinpaprika.com/"
-    }
 }
