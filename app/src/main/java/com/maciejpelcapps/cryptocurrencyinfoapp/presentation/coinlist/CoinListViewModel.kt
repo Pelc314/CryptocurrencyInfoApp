@@ -1,5 +1,6 @@
 package com.maciejpelcapps.cryptocurrencyinfoapp.presentation.coinlist
 
+import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -18,10 +19,15 @@ class CoinListViewModel @Inject constructor(
     private val _state = mutableStateOf<CoinListState>(CoinListState())
     val state: State<CoinListState> = _state
 
+    init {
+        getCoins()
+    }
+
     private fun getCoins() {
         getCoinsUseCase().onEach { flowResult ->
             when (flowResult) {
                 is Resource.Success -> {
+                    Log.d("bitcoin should be true", "${flowResult.data}")
                     _state.value = CoinListState(coins = flowResult.data ?: emptyList())
                 }
                 is Resource.Error -> {

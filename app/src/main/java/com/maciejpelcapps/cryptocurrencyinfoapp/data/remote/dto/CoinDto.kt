@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class CoinDto(
     val id: String,
-    @SerializedName("isa_active")
+    @SerializedName("is_active")
     val isActive: Boolean,
-    @SerializedName("isa_new")
+    @SerializedName("is_new")
     val isNew: Boolean,
     val name: String,
     val rank: Int,

@@ -1,5 +1,6 @@
 package com.maciejpelcapps.cryptocurrencyinfoapp.domain.usecase.getcoins
 
+import android.util.Log
 import com.maciejpelcapps.cryptocurrencyinfoapp.common.Resource
 import com.maciejpelcapps.cryptocurrencyinfoapp.data.mappers.toCoin
 import com.maciejpelcapps.cryptocurrencyinfoapp.domain.model.Coin
@@ -15,11 +16,12 @@ class GetCoinsUseCase @Inject constructor(
 ) {
     operator fun invoke(): Flow<Resource<List<Coin>>> = flow {
         try {
-            emit(Resource.Loading())
+            emit(Resource.Loading<List<Coin>>())
             val coins = repository.getCoins().map { it.toCoin() }
-            emit(Resource.Success(coins))
+            Log.d("bitcoin GetCoinUseCase", "${repository.getCoins().get(0).isActive}")
+            emit(Resource.Success<List<Coin>>(coins))
         } catch (e: HttpException) { // this exception happens when we get a response code which doesn't start with 2xx it most often means that we got an error
-            emit(Resource.Error(e.localizedMessage ?: "Unexpected http error occured"))
+            emit(Resource.Error<List<Coin>>(e.localizedMessage ?: "Unexpected http error occured"))
         } catch (e: IOException) { // this exception means our repository or api cannot talk to the remote API for example lack of internet conection
             emit(
                 Resource.Error(
