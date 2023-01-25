@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -40,6 +39,7 @@ android {
         compose true
     }
     composeOptions {
+        kotlinCompilerExtensionVersion compose_ui_version
         kotlinCompilerExtensionVersion '1.2.0'
     }
     packagingOptions {
